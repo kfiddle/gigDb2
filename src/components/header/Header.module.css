@@ -7,8 +7,7 @@
     padding: 1rem 2rem;
     justify-content: space-between;
     align-items: center;
-    /* background: #f3f1f1; */
-
+    letter-spacing: 0.05em;
     background: linear-gradient(90deg, #43232d 0%, #a3c0c6 100%);
 }
 
@@ -26,8 +25,11 @@
 
 .li {
     font-weight: 900;
+    font-size: 1.3rem;
+    margin-right: 2rem;
     cursor: pointer;
     color: antiquewhite;
+    letter-spacing: 0.05em;
 }
 
 .li:hover {
