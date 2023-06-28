@@ -1,0 +1,11 @@
+
+
+.jobsDashContainer {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.jobsDiv {
+    border-right: 2px solid rgb(62, 1, 1);
+}

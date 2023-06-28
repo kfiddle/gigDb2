@@ -9,7 +9,7 @@ const Stripes = () => {
     const { dash, dispatch } = useContext(DashHolder);
 
     const openSide = () => {
-        dispatch({ type: 'sideBarClick' })
+        dispatch({ type: 'sidebarClick', isOpen: true })
     }
 
     return <div className={styles.stripeContainer} onClick={openSide}>

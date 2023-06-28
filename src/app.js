@@ -6,23 +6,26 @@ import { DashHolder } from './store/object-holder';
 import Dashboard from "./components/Dashboard";
 import Header from './components/header/Header';
 import Roster from './components/roster/Roster';
-import Jobs from './components/jobs/Jobs';
+import JobsDash from './components/jobs/JobsDash';
 import Sidebar from './components/sidebar/Sidebar';
 
 const initialState = {
     roster: [],
     jobs: [],
-    sideBarOpen: false,
+    sidebarOpen: false,
+    clickedJob: null,
 };
 
 const dashReducer = (state, action) => {
     switch (action.type) {
         case 'engineers':
-            return { ...state, roster: action.list, jobs: [] }
-        case 'sideBarClick':
-            return { ...state, sideBarOpen: true }
+            return { ...state, clickedJob: null, roster: action.list, jobs: [] }
+        case 'sidebarClick':
+            return { ...state, sidebarOpen: action.isOpen }
         case 'jobs':
-            return { ...state, jobs: action.list, roster: []  }
+            return { ...state, clickedJob: null, jobs: action.list, roster: []  }
+        case 'clickedJob' :
+            return { ...state, clickedJob: action.job }
     }
 }
 
@@ -30,16 +33,16 @@ const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
     useEffect(() => {
-        // console.log(dash.jobs)
-    }, [dash.jobs])
+        console.log(dash.clickedJob)
+    }, [dash.clickedJob])
 
     return <div>
         <DashHolder.Provider value={{ dash, dispatch }}>
             <Header />
             <Dashboard />
-            <Sidebar />
+            {dash.sidebarOpen && <Sidebar />}
             {dash.roster.length > 1 && <Roster />}
-            {dash.jobs.length > 1 && <Jobs />}
+            {dash.jobs.length > 1 && <JobsDash />}
         </DashHolder.Provider>
     </div>
 
