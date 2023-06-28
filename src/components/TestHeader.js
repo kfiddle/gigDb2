@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react';
 
+
+import styles from './TestHeader.module.css';
+
 const TestHeader = () => {
 
     const toBack = async () => {
@@ -11,7 +14,7 @@ const TestHeader = () => {
 
     return (
         <Fragment>
-            <h3>From here, we have maybe a component</h3>
+            <h3 className={styles.header}>From here, we have maybe a component</h3>
             <button onClick={toBack}>test backend more</button>
         </Fragment>)
 
