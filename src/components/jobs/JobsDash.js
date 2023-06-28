@@ -4,6 +4,7 @@ import { DashHolder } from '../../store/object-holder';
 import Job from './job/Job';
 
 import styles from './JobsDash.module.css';
+import JobDeets from './job/jobDeets/JobDeets';
 
 const JobsDash = () => {
     const { dash, dispatch } = useContext(DashHolder);
@@ -14,7 +15,7 @@ const JobsDash = () => {
 
     return <div className={styles.jobsDashContainer}>
         <div className={styles.jobsDiv}>{displayJobs}</div>
-
+        {dash.clickedJob && <JobDeets />}
     </div>
 };
 
