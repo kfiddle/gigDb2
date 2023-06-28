@@ -9,12 +9,15 @@ import Roster from './components/roster/Roster';
 
 const initialState = {
     roster: [],
+    sideBarOpen: false,
 };
 
 const dashReducer = (state, action) => {
     switch (action.type) {
-        case 'players':
+        case 'engineers':
             return { ...state, roster: action.list }
+        case 'sideBarClick':
+            return { ...state, sideBarOpen: true }
     }
 }
 
@@ -22,8 +25,8 @@ const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
     useEffect(() => {
-        if (dash.roster.length > 0) console.log(dash.roster)
-    }, [dash.roster])
+        console.log(dash.sideBarOpen)
+    }, [dash.sideBarOpen])
 
     return <div>
         <DashHolder.Provider value={{ dash, dispatch }}>
