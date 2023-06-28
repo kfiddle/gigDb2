@@ -8,7 +8,7 @@ const Roster = () => {
     console.log(dash.roster);
 
     let displayRoster = dash.roster.map(player => (
-        <div key={dash.roster.indexOf(player)}>{player.fname}</div>
+        <div key={player._id}>{player.name}</div>
     ))
 
     return <div className={styles.rosterContainer}>{displayRoster}</div>
