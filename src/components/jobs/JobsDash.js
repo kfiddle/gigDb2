@@ -28,6 +28,7 @@ const JobsDash = () => {
     return <div className={styles.jobsDashContainer}>
         <div className={styles.jobsDiv}>{displayJobs}</div>
         {dash.clickedJob && <JobDeets />}
+        {dash.engineersBySpeak.length > 0 && <div>got some</div>}
     </div>
 };
 

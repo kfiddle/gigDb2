@@ -1,4 +1,3 @@
-
 .hired {
     color: green;
     cursor: pointer;
@@ -9,5 +8,12 @@
     color: rgb(181, 2, 31);
     cursor: pointer;
     margin-bottom: 0.5rem;
+}
 
+.hired:hover {
+    color: chartreuse;
+}
+
+.unhired:hover {
+    color: chartreuse;
 }

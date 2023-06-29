@@ -10,10 +10,6 @@ const Speak = ({ speak }) => {
 
     const speakClicker = () => dispatch({type: 'clickedSpeak', speak: speak });
 
-    
-    // const jobClicker = () => dispatch({type: 'clickedJob', job: job })
-    // const speakClicker = () => console.log(speak)
-
     return <div className={classN} onClick={speakClicker}>{speak.name}</div>
 
 };

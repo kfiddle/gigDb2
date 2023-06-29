@@ -3,7 +3,7 @@
 .jobsDashContainer {
     margin-top: 10rem;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .jobsDiv {

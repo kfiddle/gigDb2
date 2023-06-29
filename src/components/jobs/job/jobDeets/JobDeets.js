@@ -21,7 +21,6 @@ const JobDeets = () => {
         <div className={styles.companyDiv}>{clickedJob.company}</div>
         <div className={styles.salaryDiv}>${clickedJob.salary},000</div>
         <div className={styles.speaksDiv}>{displayedSpeaks}</div>
-
     </div>
 
 };

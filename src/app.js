@@ -15,6 +15,7 @@ const initialState = {
     sidebarOpen: false,
     clickedJob: null,
     clickedSpeak: null,
+    engineersBySpeak: [],
 };
 
 const dashReducer = (state, action) => {
@@ -24,19 +25,35 @@ const dashReducer = (state, action) => {
         case 'sidebarClick':
             return { ...state, sidebarOpen: action.isOpen }
         case 'jobs':
-            return { ...state, clickedJob: null, jobs: action.list, roster: []  }
-        case 'clickedJob' :
+            return { ...state, clickedJob: null, jobs: action.list, roster: [] }
+        case 'clickedJob':
             return { ...state, clickedJob: action.job }
-        case 'clickedSpeak' :
+        case 'clickedSpeak':
             return { ...state, clickedSpeak: action.speak };
+        case 'engineersBySpeak' :
+            return { ...state, engineersBySpeak: action.engineers }
     }
 }
 
 const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
+    // const reply = await fetch(`http://localhost:3000/jobs_speaks/${clickedJob.id}`);
+    //         const parsedList = await reply.json();
+    //         console.log(parsedList);
+    //         // if (parsedList.engineers.length) dispatch({ type: 'engineers', list: parsedList.engineers })
+
     useEffect(() => {
-        console.log(dash.clickedSpeak)
+        const getEngineersByJobSpeak = async () => {
+            const jsToSend = dash.clickedSpeak;
+            if (!jsToSend.engineer_id) {
+                let reply = await fetch(`http://localhost:3000/players/by_speak/${jsToSend.speaks_id}`)
+                const parsedList = await reply.json();
+                dispatch({ type: 'engineersBySpeak', engineers: parsedList.engineers });
+            }
+         }
+         if (dash.clickedSpeak) getEngineersByJobSpeak();
+
     }, [dash.clickedSpeak])
 
     return <div>
