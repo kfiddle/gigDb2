@@ -25,6 +25,8 @@ const dashReducer = (state, action) => {
         case 'jobs':
             return { ...state, clickedJob: null, jobs: action.list, roster: []  }
         case 'clickedJob' :
+            console.log('here in the clicky of the jobby')
+
             return { ...state, clickedJob: action.job }
     }
 }
@@ -33,7 +35,7 @@ const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
     useEffect(() => {
-        console.log(dash.clickedJob)
+        // console.log(dash.clickedJob)
     }, [dash.clickedJob])
 
     return <div>

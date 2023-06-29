@@ -13,6 +13,8 @@ const JobsDash = () => {
         <Job key={job.id} job={job} />
     ))
 
+    console.log(dash.clickedJob)
+
     return <div className={styles.jobsDashContainer}>
         <div className={styles.jobsDiv}>{displayJobs}</div>
         {dash.clickedJob && <JobDeets />}
