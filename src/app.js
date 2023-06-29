@@ -33,7 +33,7 @@ const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
     useEffect(() => {
-        console.log(dash.clickedJob)
+        // console.log(dash.clickedJob)
     }, [dash.clickedJob])
 
     return <div>
