@@ -2,9 +2,11 @@ import React from 'react';
 
 import styles from './Engineer.module.css'
 
-const Engineer = ({ engineer }) => {
+const Engineer = ({ engineer, clicker }) => {
 
-    return <div className={styles.container}>{engineer.name}</div>
+    const clickHandler = () => clicker(engineer._id);
+
+    return <div className={styles.container} onClick={clickHandler}>{engineer.name}</div>
 
 };
 

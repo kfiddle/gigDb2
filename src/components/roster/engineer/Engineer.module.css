@@ -1,6 +1,11 @@
 
 
 .container {
-    padding: 1rem;
+    padding: 0rem 1rem 1rem 2rem;
+    font-weight: 900;
     cursor: pointer;
+}
+
+.container:hover {
+    color: chartreuse;
 }
