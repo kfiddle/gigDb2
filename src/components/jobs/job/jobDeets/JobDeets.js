@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { DashHolder } from '../../../../store/object-holder';
 
 import styles from './JobDeets.module.css'
+import Speak from './speak/Speak';
 
 const JobDeets = () => {
     const [speaks, setSpeaks] = useState([]);
@@ -12,7 +13,7 @@ const JobDeets = () => {
     console.log(clickedJob.speaks)
 
     let displayedSpeaks = clickedJob.speaks.map(speak => (
-        <div key={speak.id}>{speak.name}</div>
+        <Speak key={speak.id} speak={speak}/>
     ))
 
 

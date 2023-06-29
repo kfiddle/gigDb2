@@ -1,0 +1,13 @@
+
+.hired {
+    color: green;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.unhired {
+    color: rgb(181, 2, 31);
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+
+}

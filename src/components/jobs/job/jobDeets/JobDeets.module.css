@@ -16,3 +16,7 @@
 .speaksDiv {
     margin-top: 2rem;
 }
+
+.speakDiv {
+    cursor: pointer;
+}
