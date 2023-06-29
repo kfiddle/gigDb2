@@ -1,0 +1,13 @@
+.engineersContainer {
+    padding: 1rem 2rem;
+    font-weight: 700;
+}
+
+.engDiv {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.engDiv:hover {
+    color: chartreuse;
+}

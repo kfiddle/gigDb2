@@ -5,6 +5,7 @@ import Job from './job/Job';
 
 import styles from './JobsDash.module.css';
 import JobDeets from './job/jobDeets/JobDeets';
+import EngSpeaks from './job/jobDeets/speak/engineersBySpeak/EngSpeaks';
 
 const JobsDash = () => {
     const { dash, dispatch } = useContext(DashHolder);
@@ -28,7 +29,7 @@ const JobsDash = () => {
     return <div className={styles.jobsDashContainer}>
         <div className={styles.jobsDiv}>{displayJobs}</div>
         {dash.clickedJob && <JobDeets />}
-        {dash.engineersBySpeak.length > 0 && <div>got some</div>}
+        {dash.engineersBySpeak.length > 0 && <EngSpeaks />}
     </div>
 };
 

@@ -27,7 +27,7 @@ const dashReducer = (state, action) => {
         case 'jobs':
             return { ...state, clickedJob: null, jobs: action.list, roster: [] }
         case 'clickedJob':
-            return { ...state, clickedJob: action.job }
+            return { ...state, engineersBySpeak: [], clickedJob: action.job }
         case 'clickedSpeak':
             return { ...state, clickedSpeak: action.speak };
         case 'engineersBySpeak' :
@@ -37,11 +37,6 @@ const dashReducer = (state, action) => {
 
 const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
-
-    // const reply = await fetch(`http://localhost:3000/jobs_speaks/${clickedJob.id}`);
-    //         const parsedList = await reply.json();
-    //         console.log(parsedList);
-    //         // if (parsedList.engineers.length) dispatch({ type: 'engineers', list: parsedList.engineers })
 
     useEffect(() => {
         const getEngineersByJobSpeak = async () => {
