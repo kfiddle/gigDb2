@@ -15,18 +15,21 @@ const Sidebar = () => {
     const langFormClicker = () => setWhichForm('lang');
 
     const formInputter = (event, inputId) => {
-        console.log(event.target.value, inputId);
         let prevVals = [...formVals];
         prevVals[inputId] = event.target.value;
         setFormVals(prevVals);
     }
 
-    const sendJobUp = () => {
+    const sendJobUp = async () => {
         let currentVals = [...formVals];
         let num = currentVals[2];
         currentVals[2] = Number(num);
         setFormVals(currentVals);
-        console.log(formVals);
+        const reply = await fetch(`http://localhost:3000/jobs`, {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({id: 20, title: currentVals[0], company: currentVals[1], salary: currentVals[2]})
+        })
     }
 
 
