@@ -10,7 +10,6 @@ const JobDeets = () => {
     const { dash, dispatch } = useContext(DashHolder);
     const { clickedJob } = dash;
 
-    console.log(clickedJob.speaks)
 
     let displayedSpeaks = clickedJob.speaks.map(speak => (
         <Speak key={speak.id} speak={speak}/>

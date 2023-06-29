@@ -14,6 +14,7 @@ const initialState = {
     jobs: [],
     sidebarOpen: false,
     clickedJob: null,
+    clickedSpeak: null,
 };
 
 const dashReducer = (state, action) => {
@@ -26,6 +27,8 @@ const dashReducer = (state, action) => {
             return { ...state, clickedJob: null, jobs: action.list, roster: []  }
         case 'clickedJob' :
             return { ...state, clickedJob: action.job }
+        case 'clickedSpeak' :
+            return { ...state, clickedSpeak: action.speak };
     }
 }
 
@@ -33,8 +36,8 @@ const App = () => {
     const [dash, dispatch] = useReducer(dashReducer, initialState);
 
     useEffect(() => {
-        // console.log(dash.clickedJob)
-    }, [dash.clickedJob])
+        console.log(dash.clickedSpeak)
+    }, [dash.clickedSpeak])
 
     return <div>
         <DashHolder.Provider value={{ dash, dispatch }}>

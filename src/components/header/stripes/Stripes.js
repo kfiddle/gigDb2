@@ -12,8 +12,9 @@ const Stripes = () => {
         dispatch({ type: 'sidebarClick', isOpen: true })
     }
 
+
     return <div className={styles.stripeContainer} onClick={openSide}>
-        <span className={styles.stripe1}></span>
+        <span className={styles.stripeOne}></span>
         <span className={styles.stripe2}></span>
         <span className={styles.stripe3}></span>
 
